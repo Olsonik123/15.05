@@ -1,0 +1,102 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace sprawdzian
+{
+    internal class Program
+    {
+        interface IColumnable
+        {
+            void AddColumnToSection();
+        }
+        interface IFloatable
+        {
+            void FloatLeft();
+            void ClearBoth();
+        }
+
+        abstract class AbstractSectionDisplay
+        {
+            public abstract string name { get; set; }
+
+        }
+        class Normal : AbstractSectionDisplay, IColumnable, IFloatable
+        { 
+            public bool Visible { get;set; }
+            public override string name { get; set; }
+            public List<Column> Columns = new List<Column>();
+
+            public void AddColumnToSection()
+            {
+                
+            }
+            public void FloatLeft()
+            {
+               
+            }
+            public void ClearBoth()
+            {
+
+            }
+        }
+
+        class Fullwidth : AbstractSectionDisplay
+        {
+            public override string name { get; set; }
+            public List<Column> Columns();
+        }  
+        class Fixed : AbstractSectionDisplay
+        {
+            public override string name { get; set; }
+            public List<Column> Columns();
+        }
+        class Column
+        {
+            public int width { get; set; }
+            public bool display { get; set; }
+            public string name { get; set; }
+        }
+        abstract class AbstractModuleAbstract
+        {
+            public string Content { get; set; }
+        }
+        class TextModule
+        {
+            public string Content { get; set; }    
+        }
+        class ImageModule
+        {
+          
+
+        }
+        class SliderModule : TextModule
+        {
+            public List<ImageModule> Pictures { get; set }
+            public SliderModule()
+            {
+                Pictures = new List<ImageModule>();
+            }
+
+
+        }
+        class MyPage
+        {
+
+        }
+
+        static void Main(string[] args)
+        {
+            kolumna1 = new Column();
+            Column.Width(150)
+            Column.Display(true)
+            
+            
+
+            Console.ReadKey();
+        }
+    }
+}
